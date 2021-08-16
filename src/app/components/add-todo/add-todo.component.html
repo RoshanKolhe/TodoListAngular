@@ -1,0 +1,43 @@
+<h1>Add New Todo</h1>
+<form class="add-form" [formGroup]="addTodo" (ngSubmit)="onSubmit()">
+  <div class="form-control">
+    <label for="text">Todo</label>
+    <input
+      type="text"
+      name="text"
+      id="text"
+      formControlName="title"
+      placeholder="Add Task"
+    />
+  </div>
+  <div class="form-control">
+    <label for="text">Description</label>
+    <input
+      type="text"
+      name="desc"
+      id="desc"
+      formControlName="desc"
+      placeholder="Add Description"
+    />
+  </div>
+  <div class="form-control">
+    <label for="day">Day & Time</label>
+    <input
+      type="text"
+      name="day"
+      id="day"
+      formControlName="date"
+      placeholder="Add Day and Time"
+    />
+  </div>
+  <div class="form-control form-control-check">
+    <label for="priority">Priority</label>
+    <select formControlName="priority" (change)="selectPriority($event)">
+      <option *ngFor="let priority of priorities" [ngValue]="priority">
+        {{ priority }}
+      </option>
+    </select>
+  </div>
+
+  <input type="submit" class="btn btn-block" value="Save Task" />
+</form>

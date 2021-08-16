@@ -1,0 +1,17 @@
+<div
+  [ngClass]="{ isComplete: !todo.isComplete }"
+  (dblclick)="onToggle(todo)"
+  class="todo"
+>
+  <h4>
+    {{ todo.title }}
+    <fa-icon
+      [ngStyle]="{ color: 'red' }"
+      [icon]="faTimes"
+      (click)="onDelete(todo)"
+    ></fa-icon>
+  </h4>
+  <small>{{ todo.date }}</small>
+  <p>{{ todo.desc }}</p>
+  <p>Priority:{{ todo.priority }}</p>
+</div>
