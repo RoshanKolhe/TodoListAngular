@@ -41,8 +41,6 @@ export class TodosComponent implements OnInit {
     const index = this.todos.indexOf(todo);
     this.todos[index].isComplete = !this.todos[index].isComplete;
     localStorage.setItem("todos",JSON.stringify(this.todos));
-    
-
   }
 }
 
